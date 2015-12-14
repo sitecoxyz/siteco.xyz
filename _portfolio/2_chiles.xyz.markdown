@@ -1,7 +1,7 @@
 ---
 layout: post
-title: Project
-description: a project with a background image
+title: Chiles.xyz
+description: Chile pepper info site
 img: /img/2.png
 ---
 
