@@ -10,15 +10,54 @@ layout: default
   <br/>
 </div>
 
+{% assign groups = site.portfolio | group_by: "category" %}
 
-<ul class="post-list">
-    {% for post in paginator.posts %}
-      <li>
-        <h2><a class="post-title" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a></h2>
-        <p class="post-meta">{{ post.date | date: '%B %-d, %Y — %H:%M' }}</p>
-        <p>{{ post.description }}</p>
-        <br/>
-        <hr/>
-      </li>
+    {% for group in groups %}
+        <h2>{{ group.name }}</h2>
+        <div class="wrapper">
+
+        {% assign sortedprojects = group.items | sort: "order" %}
+
+        {% for project in sortedprojects %}
+
+        {% if project.redirect %}
+        <div class="project">
+            <div class="thumbnail">
+                <a href="{{ project.redirect }}" target="_blank">
+                {% if project.img %}
+                <img class="thumbnail" src="{{ project.img }}"/>
+                {% else %}
+                <div class="thumbnail blankbox"></div>
+                {% endif %}
+                <span>
+                    <h1>{{ project.title | truncate: 12}}</h1>
+                    <br/>
+                    <p>{{ project.description }}</p>
+                </span>
+                </a>
+            </div>
+        </div>
+        {% else %}
+
+        <div class="project ">
+            <div class="thumbnail">
+                <a href="{{ site.baseurl }}{{ project.url }}">
+                {% if project.img %}
+                <img class="thumbnail" src="{{ project.img }}"/>
+                {% else %}
+                <div class="thumbnail blankbox"></div>
+                {% endif %}
+                <span>
+                    <h1>{{ project.title | truncate: 12 }}</h1>
+                    <br/>
+                    <p>{{ project.description }}</p>
+                </span>
+                </a>
+            </div>
+        </div>
+
+        {% endif %}
+
+        {% endfor %}
+      </div>
     {% endfor %}
-</ul>

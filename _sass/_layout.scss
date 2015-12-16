@@ -2,6 +2,16 @@
 /**
  * Site header   **********************************************************
  */
+div.title{
+  float: left;
+  line-height: 56px;
+}
+
+a#title {
+  font-weight: bold;
+  color: $theme-color;
+}
+
 .site-header {
 border-bottom: 1px solid $grey-color-light;
 background-color: #fff;
@@ -73,6 +83,9 @@ display: line;
 /**
  * Site footer  **********************************************************
  */
+footer a {
+  color: $theme-color
+}
 .site-footer {
 border-top: 1px solid $grey-color-dark;
 font-size: 10px;
@@ -228,11 +241,14 @@ bottom: 0;
 right: 0;
 background: rgba(0,0,0,0.4);
 color: $grey-color-light;
-padding: 20px;
+padding: 5px;
 text-align: center;
 }
 .thumbnail a:hover span {
 display: block;
+}
+.thumbnail a span pre {
+  white-space: pre-line;
 }
 /**
  * Portfolio pages **********************************************************
