@@ -1,20 +1,13 @@
 ---
-layout: default
+layout: page
+title: portfolio
+permalink: /portfolio/
 ---
-
-<div class="header-bar">
-  <h1>{{ site.title }}</h1>
-  <h2>{{ site.description }}</h2>
-  <br/>
-  <hr>
-  <br/>
-</div>
-
 {% assign groups = site.portfolio | group_by: "category" %}
 
     {% for group in groups %}
-        {% if group.name == 'featured' %}
         <div class="wrapper">
+        <h2>{{ group.name }}</h2>
 
         {% assign sortedprojects = group.items | sort: "order" %}
 
@@ -25,7 +18,7 @@ layout: default
             <div class="thumbnail">
                 <a href="{{ project.redirect }}" target="_blank">
                 {% if project.img %}
-                <img class="thumbnail" src="{{ project.img }}"/>
+                <img class="thumbnail" src="/{{ project.img }}"/>
                 {% else %}
                 <div class="thumbnail blankbox"></div>
                 {% endif %}
@@ -63,9 +56,4 @@ layout: default
 
         {% endfor %}
       </div>
-      {% endif %}
     {% endfor %}
-
-    <div class="wrapper">
-      <h2><a href="/portfolio">See the full portfolio and domain list on the portfolio page</a></h2>
-    </div>

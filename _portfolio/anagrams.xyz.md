@@ -2,8 +2,7 @@
 title: "anagrams.xyz"
 layout: post
 description: anargrams game
-category: dynamic
+category: featured
 img: img/anagrams.xyz.png
 redirect: http://anagrams.xyz
 ---
-
