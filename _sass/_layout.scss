@@ -217,6 +217,7 @@ margin-top: 10px;
 margin-bottom: 30px;
 }
 .dname {
+  text-align: center;
   @include media-query-min(400px) {
       margin-top: 12px;
     }
