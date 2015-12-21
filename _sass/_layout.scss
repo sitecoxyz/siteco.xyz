@@ -172,6 +172,11 @@ font-size: 18px;
         }
     }
 }
+@media (max-width: 800px) and (min-width: 650px) {
+    h2#plink {
+        margin-top: 50px;
+    }
+}
 .post-meta {
 font-size: $small-font-size;
 color: $grey-color;
