@@ -177,6 +177,13 @@ font-size: 18px;
         margin-top: 50px;
     }
 }
+h2#plink{
+  padding-bottom: 20px;
+  a{
+    text-decoration: underline;
+    color: $theme-color;
+  }
+}
 .post-meta {
 font-size: $small-font-size;
 color: $grey-color;
