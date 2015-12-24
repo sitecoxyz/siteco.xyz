@@ -2,8 +2,7 @@
 title: "headache.xyz"
 layout: post
 description: The end of headaches!
-category: info
+category: featured
 img: img/headache.xyz.png
 redirect: http://headache.xyz
 ---
-
